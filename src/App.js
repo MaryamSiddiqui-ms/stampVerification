@@ -31,8 +31,8 @@
       <p class="name">Maryam Siddiqui</p>
     </div>
     <div class="student">
-      <p class="roll-number">K201080</p>
-      <p class="name">Mohammad Owais</p>
+      <p class="roll-number">K201680</p>
+      <p class="name">Owais Ali</p>
     </div>
     </div>
 
