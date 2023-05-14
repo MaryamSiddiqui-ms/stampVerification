@@ -5,7 +5,7 @@ import './App.css';
 function API(props){
     const [imgUrl, setImgUrl] = useState('');
 
-    const url = 'https://7a16-34-147-68-148.ngrok.io/index';
+    const url = 'https://6dbb-34-125-142-195.ngrok.io/index';
     const requestConfig = {
         headers: {
             'Content-Type': 'multipart/form-data',
