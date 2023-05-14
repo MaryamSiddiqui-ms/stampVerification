@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import leftImage from './assets/left.jpg';
 import Typewriter from "typewriter-effect";
+import API from './API'
 import Modal from 'react-modal';
 
 function ImageViewModal(props) {
@@ -29,7 +30,7 @@ function App() {
 
   
   const closeModal = () => {
-    setUploadedFile(null);
+    // setUploadedFile(null);
     setIsModalOpen(false);
   };
   const hiddenFileInput = React.useRef(null);
@@ -42,6 +43,7 @@ function App() {
     const fileUploaded = event.target.files[0];
     setUploadedFile(fileUploaded);
     setIsModalOpen(true);
+    // console.log(uploadedFile)
   };
 
   return (
@@ -86,6 +88,7 @@ function App() {
           <p className="sub-sub-heading">Upload your image to verify its stamp</p>
         </div>
         <button onClick={handleClick} className="upload-button">Upload Image</button>
+        <API image = {uploadedFile} />
         <input
           type="file"
           ref={hiddenFileInput}
