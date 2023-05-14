@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import leftImage from './assets/left.jpg';
 import Typewriter from "typewriter-effect";
@@ -28,6 +28,9 @@ function App() {
   const [uploadedFile, setUploadedFile] = useState(null);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
+  useEffect(() => {
+    console.log(uploadedFile)
+  }, [uploadedFile])
   
   const closeModal = () => {
     // setUploadedFile(null);
@@ -43,7 +46,7 @@ function App() {
     const fileUploaded = event.target.files[0];
     setUploadedFile(fileUploaded);
     setIsModalOpen(true);
-    // console.log(uploadedFile)
+    console.log(uploadedFile)
   };
 
   return (
