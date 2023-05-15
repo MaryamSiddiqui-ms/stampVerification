@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 function API(props){
-    const [imgUrl, setImgUrl] = useState('');
+    const [res, setRes] = useState('');
 
     const url = 'https://1dd0-35-223-238-116.ngrok.io/index';
     const requestConfig = {
@@ -19,10 +19,8 @@ function API(props){
         
         axios.post(url, formData, requestConfig)
         .then((response) => {
-            console.log(response?.data)
-            setImgUrl(`data:image/jpeg;base64,${response.data}`);
-            // setImgUrl(`https://4bf1-34-125-142-195.ngrok.io{response.data.url}`);
-            // console.log(setImgUrl)
+            // console.log(response?.data)
+            setImgUrl(response.data)
         })
         .catch((err) => {
             console.log(err)
@@ -35,8 +33,6 @@ function API(props){
                 Verify
             </button>
             {imgUrl && <img src={imgUrl} alt='image' />}
-            {/* <img src={`https://024f-34-125-142-195.ngrok.io/content/static/predicted.jpg`} alt="predicted image" /> */}
-
         </>
     )
 }
