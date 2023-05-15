@@ -5,7 +5,7 @@ import './App.css';
 function API(props){
     const [res, setRes] = useState('');
 
-    const url = 'https://1dd0-35-223-238-116.ngrok.io/index';
+    const url = 'https://a000-35-227-13-11.ngrok.io/index';
     const requestConfig = {
         headers: {
             'Content-Type': 'multipart/form-data',
@@ -19,8 +19,9 @@ function API(props){
         
         axios.post(url, formData, requestConfig)
         .then((response) => {
-            // console.log(response?.data)
-            setImgUrl(response.data)
+            // console.log(response?.data.response)
+            setRes(response.data.response)
+            console.log(res)
         })
         .catch((err) => {
             console.log(err)
@@ -32,7 +33,13 @@ function API(props){
             <button className='verify-btn' onClick={query}>
                 Verify
             </button>
-            {imgUrl && <img src={imgUrl} alt='image' />}
+            {
+                res != '' ?
+                <h1 className='verification-text'>
+                    {res}
+                </h1>
+                : null
+            }
         </>
     )
 }
