@@ -5,7 +5,7 @@ import './App.css';
 function API(props){
     const [imgUrl, setImgUrl] = useState('');
 
-    const url = 'https://6dbb-34-125-142-195.ngrok.io/index';
+    const url = 'https://1dd0-35-223-238-116.ngrok.io/index';
     const requestConfig = {
         headers: {
             'Content-Type': 'multipart/form-data',
@@ -19,8 +19,10 @@ function API(props){
         
         axios.post(url, formData, requestConfig)
         .then((response) => {
-            // console.log(response?.data)
-            setImgUrl(response.data)
+            console.log(response?.data)
+            setImgUrl(`data:image/jpeg;base64,${response.data}`);
+            // setImgUrl(`https://4bf1-34-125-142-195.ngrok.io{response.data.url}`);
+            // console.log(setImgUrl)
         })
         .catch((err) => {
             console.log(err)
@@ -33,6 +35,8 @@ function API(props){
                 Verify
             </button>
             {imgUrl && <img src={imgUrl} alt='image' />}
+            {/* <img src={`https://024f-34-125-142-195.ngrok.io/content/static/predicted.jpg`} alt="predicted image" /> */}
+
         </>
     )
 }
