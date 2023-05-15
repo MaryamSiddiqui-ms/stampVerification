@@ -35,9 +35,14 @@ function API(props){
             </button>
             {
                 res != '' ?
-                <h1 className='verification-text'>
-                    {res}
-                </h1>
+                <>
+                    <h1 className='verification-text' style={{color: res=='Verified' ? '#4BB543 ': '#B00020'}}>
+                        {res}
+                    </h1>
+                    <div>
+                        <p className="sub-sub-heading">Visit <a href="https://huggingface.co/bilal01/segformer-b0-finetuned-segments-stamp-verification/">the model page</a> to learn more</p>
+                    </div>
+                </>
                 : null
             }
         </>

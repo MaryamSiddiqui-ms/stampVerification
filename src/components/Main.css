@@ -28,8 +28,8 @@
   .sub-heading {
     font-size: 3rem; 
     margin-top: 0.5rem; 
-    /* color: #9BA4B5; */
-    color: #FFD21E;
+    color: #9BA4B5;
+    /* color: #FFD21E; */
   }
   .logo-container {
     display: flex;
